@@ -42,6 +42,7 @@
     <Compile Include="Core\Ingredient.cs" />
     <Compile Include="Core\IngredientList.cs" />
     <Compile Include="Core\Quantity.cs" />
+    <Compile Include="Core\QuantityMeasurement.cs" />
     <Compile Include="Core\RecipeBox.cs" />
     <Compile Include="Core\RecipeStep.cs" />
     <Compile Include="Core\RecipeStepsList.cs" />

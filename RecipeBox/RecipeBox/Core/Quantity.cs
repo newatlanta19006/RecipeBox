@@ -10,40 +10,49 @@ namespace RecipeBox.Core
 {
     public enum QuantityType
     {
-        [Description("Piece")]
         Piece,
-        [Description("Cup")]
         Cup,
-        [Description("Tablespoon")]
         Tablespoon,
-        [Description("Teaspoon")]
         Teaspoon,
-        [Description("Pound")]
         Pound
     }
 
     public class Quantity
     {
         public float Amount { get; set; }
-        public QuantityType Type { get; set; }
+        public QuantityMeasurement Measurement { get; set; }
 
-        public Quantity(float amount, QuantityType type)
+        public Quantity(float amount, QuantityMeasurement measurement)
         {
             Amount = amount;
-            Type = type;
+            Measurement = measurement;
         }
 
-        public static string GetEnumDescription(Enum value)
+        // TODO: Find a better way to do this
+        public static QuantityMeasurement GetQuantityMeasurmentFromQuantityType(QuantityType type)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-
-            DescriptionAttribute[] attributes =
-                (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
-
-            if (attributes != null && attributes.Length > 0)
-                return attributes[0].Description;
-            else
-                return value.ToString();
+            QuantityMeasurement measure = new QuantityMeasurement(type, "Default");
+            switch(type)
+            {
+                case QuantityType.Cup:
+                    measure.Text = "Cup";
+                    break;
+                case QuantityType.Piece:
+                    measure.Text = "Piece";
+                    break;
+                case QuantityType.Pound:
+                    measure.Text = "Pound";
+                    break;
+                case QuantityType.Tablespoon:
+                    measure.Text = "Tablespoon";
+                    break;
+                case QuantityType.Teaspoon:
+                    measure.Text = "Teaspoon";
+                    break;
+                default:
+                    break;
+            }
+            return measure;
         }
 
         public static IEnumerable<T> EnumToList<T>()

@@ -30,7 +30,7 @@ namespace RecipeBoxClient
 
             foreach(QuantityType type in Quantity.EnumToList<QuantityType>())
             {
-                this.NewIngredientType.(Quantity.GetEnumDescription(type));
+                this.NewIngredientType.Items.Quantity.GetEnumDescription(type);
             }
         }
 
