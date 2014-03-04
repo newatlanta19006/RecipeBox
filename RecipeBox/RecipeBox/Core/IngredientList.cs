@@ -8,22 +8,22 @@ namespace RecipeBox.Core
 {
     public class IngredientList
     {
-        private List<Ingredient> _Ingredients;
+        public List<Ingredient> Ingredients { get; private set; }
 
         public IngredientList()
         {
-            _Ingredients = new List<Ingredient>();
+            Ingredients = new List<Ingredient>();
         }
 
         public int AddIngredient(Ingredient newIngredient)
         {
-            _Ingredients.Add(newIngredient);
-            return _Ingredients.Count;
+            Ingredients.Add(newIngredient);
+            return Ingredients.Count;
         }
 
         public bool RemoveIngredient(int index)
         {
-            _Ingredients.RemoveAt(index);
+            Ingredients.RemoveAt(index);
             return true;
         }
     }

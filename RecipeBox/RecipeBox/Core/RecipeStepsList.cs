@@ -8,11 +8,11 @@ namespace RecipeBox.Core
 {
     public class RecipeStepsList
     {
-        private List<RecipeStep> _RecipeSteps;
+        public List<RecipeStep> RecipeSteps {get; private set; }
 
         public RecipeStepsList()
         {
-            _RecipeSteps = new List<RecipeStep>();
+            RecipeSteps = new List<RecipeStep>();
         }
 
         /*
@@ -20,8 +20,8 @@ namespace RecipeBox.Core
          */
         public int AddRecipeStep(RecipeStep newRecipeStep)
         {
-            _RecipeSteps.Add(newRecipeStep);
-            return _RecipeSteps.Count;
+            RecipeSteps.Add(newRecipeStep);
+            return RecipeSteps.Count;
         }
 
         /*
@@ -29,7 +29,7 @@ namespace RecipeBox.Core
          */
         public bool RemoveRecipeStep(int index)
         {
-            _RecipeSteps.RemoveAt(index);
+            RecipeSteps.RemoveAt(index);
             return true;
         }
     }

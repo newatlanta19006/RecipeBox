@@ -83,6 +83,7 @@
             this.Controls.Add(this.MyRecipesListBox);
             this.Name = "RecipeBoxHome";
             this.Text = "RecipeBoxHome";
+            this.Load += new System.EventHandler(this.RecipeBoxHome_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

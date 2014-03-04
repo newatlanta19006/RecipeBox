@@ -224,6 +224,7 @@
             this.NewStepAdd.TabIndex = 26;
             this.NewStepAdd.Text = "Add";
             this.NewStepAdd.UseVisualStyleBackColor = true;
+            this.NewStepAdd.Click += new System.EventHandler(this.NewStepAdd_Click);
             // 
             // NewStepText
             // 
@@ -268,6 +269,7 @@
             this.NewRecipeAdd.TabIndex = 27;
             this.NewRecipeAdd.Text = "Submit";
             this.NewRecipeAdd.UseVisualStyleBackColor = true;
+            this.NewRecipeAdd.Click += new System.EventHandler(this.NewRecipeAdd_Click);
             // 
             // NewRecipeDialog
             // 

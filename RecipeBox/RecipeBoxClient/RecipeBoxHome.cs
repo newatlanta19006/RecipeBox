@@ -26,6 +26,19 @@ namespace RecipeBoxClient
         {
             NewRecipeDialog form = new NewRecipeDialog();
             form.Show();
+            form.FormClosed += form_FormClosed;
+        }
+
+        void form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //refresh the list
+            this.MyRecipesListBox.DataSource = null;
+            this.MyRecipesListBox.DataSource = Program.RecipeBox.Recipes;
+        }
+
+        private void RecipeBoxHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

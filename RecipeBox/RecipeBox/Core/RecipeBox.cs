@@ -8,21 +8,21 @@ namespace RecipeBox.Core
 {
     public class RecipeBox
     {
-        List<Recipe> _Recipes;
+        public List<Recipe> Recipes { get; private set; }
 
         public RecipeBox()
         {
-            _Recipes = new List<Recipe>();
+            Recipes = new List<Recipe>();
         }
 
         public void AddRecipe(Recipe recipe)
         {
-            _Recipes.Add(recipe);
+            Recipes.Add(recipe);
         }
 
         public void RemoveRecipe(int index)
         {
-            _Recipes.RemoveAt(index);
+            Recipes.RemoveAt(index);
         }
     }
 }

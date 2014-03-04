@@ -19,5 +19,10 @@ namespace RecipeBox.Core
         {
             StepText = stepText;
         }
+
+        public override string ToString()
+        {
+            return StepText;
+        }
     }
 }
