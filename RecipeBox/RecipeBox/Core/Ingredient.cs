@@ -17,7 +17,7 @@ namespace RecipeBox.Core
         }
 
         public Ingredient(string name)
-            : this(name, new Quantity(1, QuantityType.Piece))
+            : this(name, new Quantity(1, Quantity.GetQuantityMeasurementFromQuantityType(QuantityType.Piece)))
         {
         }
 
@@ -29,7 +29,7 @@ namespace RecipeBox.Core
 
         public override string ToString()
         {
-            return Amount.Amount + " " + Quantity.GetEnumDescription(Amount.Type) + "  " + Name;
+            return Amount.Amount + " " + Amount.Measurement.Text + "  " + Name;
         }
     }
 }

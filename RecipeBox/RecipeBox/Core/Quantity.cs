@@ -29,7 +29,7 @@ namespace RecipeBox.Core
         }
 
         // TODO: Find a better way to do this
-        public static QuantityMeasurement GetQuantityMeasurmentFromQuantityType(QuantityType type)
+        public static QuantityMeasurement GetQuantityMeasurementFromQuantityType(QuantityType type)
         {
             QuantityMeasurement measure = new QuantityMeasurement(type, "Default");
             switch(type)
@@ -51,6 +51,32 @@ namespace RecipeBox.Core
                     break;
                 default:
                     break;
+            }
+            return measure;
+        }
+
+        public static QuantityMeasurement GetQuantityMeasurementFromString(string text)
+        {
+            QuantityMeasurement measure = new QuantityMeasurement(QuantityType.Piece, "default");
+            if (text == "Cup")
+            {
+                measure = GetQuantityMeasurementFromQuantityType(QuantityType.Cup);
+            }
+            else if (text == "Piece")
+            {
+                measure = GetQuantityMeasurementFromQuantityType(QuantityType.Piece);
+            }
+            else if (text == "Pound")
+            {
+                measure = GetQuantityMeasurementFromQuantityType(QuantityType.Pound);
+            }
+            else if (text == "Tablespoon")
+            {
+                measure = GetQuantityMeasurementFromQuantityType(QuantityType.Tablespoon);
+            }
+            else if (text == "Teaspoon")
+            {
+                measure = GetQuantityMeasurementFromQuantityType(QuantityType.Teaspoon);
             }
             return measure;
         }
